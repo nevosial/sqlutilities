@@ -3,27 +3,27 @@
 | Queries used for PM tickets:|
 -------------------------------
 
-select LOGICAL_NAME, count(*) as occurence from ROOTCAUSEM1 where STATUS not in ('Closed' , 'Cancelled')
+select LOGICAL_NAME, count(*) as occurence from TABLE_NAME where STATUS not in ('Closed' , 'Cancelled')
   group by LOGICAL_NAME
   order by count(*) desc
 
 ---active PM query for NEV Banking
-select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from ROOTCAUSEM1 where LOGICAL_NAME='CM0050075' and STATUS not in ('Closed' , 'Cancelled')
+select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from TABLE_NAME where LOGICAL_NAME='CM0050075' and STATUS not in ('Closed' , 'Cancelled')
 
 ---active PM query for Application CI: FCUBS (with payment module) ; Service:China ABP services
-select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from ROOTCAUSEM1 where LOGICAL_NAME='CM0276020' and STATUS not in ('Closed' , 'Cancelled')
+select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from TABLE_NAME where LOGICAL_NAME='CM0276020' and STATUS not in ('Closed' , 'Cancelled')
 
 ---active PM for NEV CRM
-select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from ROOTCAUSEM1 where LOGICAL_NAME='CM0242885' and STATUS not in ('Closed' , 'Cancelled')
+select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from TABLE_NAME where LOGICAL_NAME='CM0242885' and STATUS not in ('Closed' , 'Cancelled')
 
 ---active Pm for application ci:NEV Banking
-select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from ROOTCAUSEM1 where LOGICAL_NAME='CM0022509' and STATUS not in ('Closed' , 'Cancelled')
+select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from TABLE_NAME where LOGICAL_NAME='CM0022509' and STATUS not in ('Closed' , 'Cancelled')
 
 ---active pm for application ci: 'Hadoop data integration'
-select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from ROOTCAUSEM1 where LOGICAL_NAME='CM0134822' and STATUS not in ('Closed' , 'Cancelled')
+select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from TABLE_NAME where LOGICAL_NAME='CM0134822' and STATUS not in ('Closed' , 'Cancelled')
 
 ---active pm for Service ci: Commsee
-select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from ROOTCAUSEM1 where LOGICAL_NAME='CM0015909' and STATUS not in ('Closed' , 'Cancelled')
+select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from TABLE_NAME where LOGICAL_NAME='CM0015909' and STATUS not in ('Closed' , 'Cancelled')
 
 
 
@@ -32,21 +32,21 @@ select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_S
 -------------------------------
 
 
-select LOGICAL_NAME, count(*) as occurence from KNOWNERRORM1 where STATUS not in ('Retired' , 'Cancelled')
+select LOGICAL_NAME, count(*) as occurence from TABLE_NAME where STATUS not in ('Retired' , 'Cancelled')
   group by LOGICAL_NAME
   order by count(*) desc
 
 ---active KE query for NEV Banking
-select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from KNOWNERRORM1 where LOGICAL_NAME='CM0050075' and STATUS not in ('Retired' , 'Cancelled', 'Closed')
+select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from TABLE_NAME where LOGICAL_NAME='CM0050075' and STATUS not in ('Retired' , 'Cancelled', 'Closed')
 
 ---active KE for service ci: CFLOW - Workflow
-select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from KNOWNERRORM1 where LOGICAL_NAME='CM0063680' and STATUS not in ('Retired' , 'Cancelled', 'Closed')
+select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from TABLE_NAME where LOGICAL_NAME='CM0063680' and STATUS not in ('Retired' , 'Cancelled', 'Closed')
 
 ---active KE for application ci:NEV Banking
-select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from KNOWNERRORM1 where LOGICAL_NAME='CM0022509' and STATUS not in ('Retired' , 'Cancelled', 'Closed')
+select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from TABLE_NAME where LOGICAL_NAME='CM0022509' and STATUS not in ('Retired' , 'Cancelled', 'Closed')
 
 ---active KE for Service ci: DB2 on MainFrame
-select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from KNOWNERRORM1 where LOGICAL_NAME='CM0107507' and STATUS not in ('Retired', 'Closed' , 'Cancelled')
+select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from TABLE_NAME where LOGICAL_NAME='CM0107507' and STATUS not in ('Retired', 'Closed' , 'Cancelled')
 
 ---active KE for Service ci: Policy ODS
-select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from KNOWNERRORM1 where LOGICAL_NAME='CM0190437' and STATUS not in ('Retired', 'Closed' , 'Cancelled')
+select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from TABLE_NAME where LOGICAL_NAME='CM0190437' and STATUS not in ('Retired', 'Closed' , 'Cancelled')

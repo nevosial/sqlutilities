@@ -1,17 +1,24 @@
 desc TABLE_NAME  //Will give the data types for colomns in the table.
 
 //To find data after a specific datetime.
-select * from probsummarym1 where resolved_time >= to_date('28/MAR/2017 18:00:00', 'dd/mm/yyyy hh24:mi:ss')
+select * from TABLE_NAME where resolved_time >= to_date('28/MAR/2017 18:00:00', 'dd/mm/yyyy hh24:mi:ss')
 
 //To find data after a specific date and matching criteria
-select m1."NUMBER", m1.problem_status from probsummarym1 m1
+select m1."NUMBER", m1.problem_status from TABLE_NAME m1
 where resolved_time >= to_date('27/FEB/2017 18:00:00', 'dd/mm/yyyy hh24:mi:ss') and m1.resolved_by NOT LIKE 'wseventin_nev%'
 
 //To find data for NULLS
 select n."NUMBER", n.assignment, n.resolved_group
-from probsummarym1 n
+from TABLE_NAME n
 where
 n.problem_status = 'Resolved' and
 n.resolved_time >= to_date('24/MAR/2017 18:00:00', 'dd/mm/yyyy hh24:mi:ss') and
 n.resolved_by LIKE 'wseventin_atos%' and
 n.resolved_group is NULL
+
+//To find data where columns are in different table
+select n."NUMBER" , n.assignment , m.CUSTOMFIELD
+from TABLE_NAME n , probsummarym2 m
+where
+n.problem_status = "Resolved" and
+m.CUSTOMFIELD is NOT NULL
