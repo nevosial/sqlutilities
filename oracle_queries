@@ -22,14 +22,3 @@ from TABLE_NAME n , probsummarym2 m
 where
 n.problem_status = "Resolved" and
 m.CUSTOMFIELD is NOT NULL
-
-//Update queries
-UPDATE PROBSUMMARYM1 SET CLOSE_TIME=RESOLVED_TIME+ INTERVAL '7' DAY WHERE (PROBLEM_STATUS='CLOSED' AND CLOSE_TIME IS NULL AND RESOLVED_TIME IS NOT NULL)
-UPDATE PROBSUMMARYM1 m1 SET RESOLVED_GROUP='ABCD' where m1."NUMBER" in ('KET1','KET2')
-
-**Always follow an update statement with a commit.**
-
-//Update strategy.
-- Run update on the numbers acquired from the select.
-- Run in batches of 1000.
-- Backup : DB / only tickets backup via application in batches.
