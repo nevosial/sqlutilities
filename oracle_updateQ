@@ -1,4 +1,5 @@
 //Update queries
+
 UPDATE PROBSUMMARYM1 SET CLOSE_TIME=RESOLVED_TIME+ INTERVAL '7' DAY WHERE (PROBLEM_STATUS='CLOSED' AND CLOSE_TIME IS NULL AND RESOLVED_TIME IS NOT NULL)
 UPDATE PROBSUMMARYM1 m1 SET RESOLVED_GROUP='ABCD' where m1."NUMBER" in ('KET1','KET2')
 
@@ -8,3 +9,44 @@ UPDATE PROBSUMMARYM1 m1 SET RESOLVED_GROUP='ABCD' where m1."NUMBER" in ('KET1','
 - Run update on the numbers acquired from the select.
 - Run in batches of 1000.
 - Backup : DB / only tickets backup via application in batches.
+
+// Strategy for a bulk update.
+1. Creating a temporary table.
+
+create table TEMP_TABLE
+(
+number varchar(80),
+resolved_time datetime,
+resolution nvarchar(max),
+cause_code varchar(80),
+resolution_code varchar(80),
+resolution1 nvarchar(max),
+new_resolution nvarchar(max)
+)
+
+2. Load the data to be updated into this temporary table by using a .csv file.
+(Can use 'Import Data' feature available in the SQL workbench)
+
+3. Make sure that the data is loaded correctly by using a select statement.
+(select * from TEMP_TABLE)
+
+3. Run an update query to copy data from the TEMP_TABLE to the TABLE to be updated.
+(key in mind the reference key ; in this case 'NUMBER')
+
+update TABLE_NAME
+set
+flag = 'f',
+status ='closed',
+PROBLEM_STATUS = 'Closed',
+sysmodtime = GETDATE(),
+update_time = getdate(),
+close_time = getdate(),
+resolved_time = b.resolved_time,
+resolution = b.new_resolution,
+cause_code = b.cause_code,
+resolution_code = b.resolution_code
+from
+
+TABLE_NAME a JOIN TEMP_TABLE b
+ON
+a.NUMBER = b.NUMBER
