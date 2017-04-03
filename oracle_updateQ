@@ -46,7 +46,6 @@ resolution = b.new_resolution,
 cause_code = b.cause_code,
 resolution_code = b.resolution_code
 from
-
 TABLE_NAME a JOIN TEMP_TABLE b
 ON
 a.NUMBER = b.NUMBER

@@ -22,3 +22,15 @@ from TABLE_NAME n , probsummarym2 m
 where
 n.problem_status = "Resolved" and
 m.CUSTOMFIELD is NOT NULL
+
+//To count number across two tables and by an attribute.
+select count(p1.resolved_by)
+from TABLE_NAME1 p1 , TABLE_NAME2 p2
+where p1."NUMBER" = p2."NUMBER"
+and p1.problem_status in ('Resolved', 'Closed')
+and p1.resolved_time >= to_date('2017/02/11 00:00:00', 'YYYY/MM/DD HH24:MI:SS')
+and p1.resolved_time <= to_date('2017/03/24 00:00:00', 'YYYY/MM/DD HH24:MI:SS')
+and p1.opened_by NOT LIKE 'bay.integration%'
+and p1.opened_by NOT LIKE 'wseventin_%'
+and p1.resolved_by  LIKE 'wseventin_atos%'
+and p2.globalid LIKE '%HSDB%'
