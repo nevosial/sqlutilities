@@ -34,3 +34,7 @@ and p1.opened_by NOT LIKE 'bay.integration%'
 and p1.opened_by NOT LIKE 'wseventin_%'
 and p1.resolved_by  LIKE 'wseventin_atos%'
 and p2.globalid LIKE '%HSDB%'
+
+//Date formats.
+SQL Developer client allows to choose differnt date and time formats, the query output honors these settings.
+SQL DEV client > Tools > Preferences > NLS 
