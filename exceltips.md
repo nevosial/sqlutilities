@@ -91,4 +91,11 @@ The following is the definition with some other examples
 >- =IF(C2>B2,C2-B2,0)
 
 - This IF function in D2 is saying IF(C2 Is Greater Than B2, then return “Over Budget”, otherwise return “Within Budget”).
-- Instead of returning a text result, we are going to return a mathematical calculation. So the formula in E2 is saying IF(Actual is Greater than Budgeted, then Subtract the Budgeted amount from the Actual amount, otherwise return nothing). 
+- Instead of returning a text result, we are going to return a mathematical calculation. So the formula in E2 is saying IF(Actual is Greater than Budgeted, then Subtract the Budgeted amount from the Actual amount, otherwise return nothing).
+
+
+##### Using String chop formulae
+Excel allows to formulas to extract strings, find length etc.
+
+> input: 'Travelling from Dubai to Sydney'
+- formula : 
