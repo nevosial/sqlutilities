@@ -94,10 +94,21 @@ The following is the definition with some other examples
 - Instead of returning a text result, we are going to return a mathematical calculation. So the formula in E2 is saying IF(Actual is Greater than Budgeted, then Subtract the Budgeted amount from the Actual amount, otherwise return nothing).
 
 
-##### Using String chop formulae
+##### Using String manipulation formulae
 Excel allows to formulas to extract strings, find length etc.
 
-> input: 'Travelling from Dubai to Sydney'
+> Input : Output
+
+>|Plan|Source|Destination|
+|--|--|--|
+|Travelling from Dubai to Sydney by Emirates.|Dubai|Sydney|
+|Travelling from Auckland to Canberra by Qantas.|Auckland|Qantas|
+|Travelling from Istanbul to Amsterdam by Royal Dutch Air.|Istanbul|Amsterdam|
+|Travelling from Seattle to Boston by American Airlines.|Seattle|Boston|
+|Travelling from Manchester to Berlin by Lufthansa.|Manchester|Berlin|
+|Travelling from Mumbai to Goa by Jet airways.|Mumbai|Goa|
+
+
 - formula :
   - **MID** function returns a specific number of characters from a text string, starting at the position you specify.
   - **FIND** function locates one text string within a second text string, and returns the number of the starting position of the first text string from the first character of the second text string.
