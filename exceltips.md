@@ -109,6 +109,9 @@ Excel allows to formulas to extract strings, find length etc.
 |Travelling from Mumbai to Goa by Jet airways.|Mumbai|Goa|
 
 
-- formula :
+>- formula :
   - **MID** function returns a specific number of characters from a text string, starting at the position you specify.
   - **FIND** function locates one text string within a second text string, and returns the number of the starting position of the first text string from the first character of the second text string.
+  - **SEARCH** function will search for th string position
+
+- Usage
