@@ -49,3 +49,15 @@ from
 TABLE_NAME a JOIN TEMP_TABLE b
 ON
 a.NUMBER = b.NUMBER
+
+
+4. Following is the query to copy data from one to another table for oracle.
+
+Tempgroup table contains | NUMB | GROUP |
+Source table contains | NUMBER| field1 |....| fieldN |
+
+UPDATE TABLE_NAME p1
+SET(p1.field_name) = (select b.resolvedgroup
+from tempgroup b
+where p1."NUMBER" = b.numb)
+where exists( select 1 from tempgroup b where p1."NUMBER" = b.numb)
