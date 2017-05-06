@@ -38,3 +38,10 @@ and p2.globalid LIKE '%HSDB%'
 //Date formats..
 SQL Developer client allows to choose differnt date and time formats, the query output honors these settings.
 SQL DEV client > Tools > Preferences > NLS
+
+//Importing data from .csv into new table
+1. Create a temporary table.
+2. Expand the tables section in the navigator (sql developer)
+3. Right Click > Import Data.
+4. Use the wizard to set columns.
+5. important to note the mapping must be done properly for the data from the sheet to the temporary table fields.
