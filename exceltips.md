@@ -116,3 +116,5 @@ Excel allows to formulas to extract strings, find length etc.
   - **LEN** function returns the length of the string.
 
 - Usage
+
+    The coloumns must contain the Source and Destination.
