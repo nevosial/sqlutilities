@@ -118,3 +118,5 @@ Excel allows to formulas to extract strings, find length etc.
 - Usage
 
     The coloumns must contain the Source and Destination.
+
+    The extraction can be done using MID, LEN, SEARCH, FIND.
