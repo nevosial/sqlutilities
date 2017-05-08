@@ -50,3 +50,26 @@ select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_S
 
 ---active KE for Service ci: Policy ODS
 select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_SERVICE_OWNER, NEV_DELIVERY_OWNER from TABLE_NAME where LOGICAL_NAME='CM0190437' and STATUS not in ('Retired', 'Closed' , 'Cancelled')
+
+
+
+----------------------------------------------
+| Queries used for copying data from a table:|
+----------------------------------------------
+
+update TABLE_NAME
+set
+flag = 'f',
+status ='closed',
+PROBLEM_STATUS = 'Closed',
+sysmodtime = GETDATE(),
+update_time = getdate(),
+close_time = getdate(),
+resolved_time = b.resolved_time,
+resolution = b.new_resolution,
+cause_code = b.cause_code,
+resolution_code = b.resolution_code
+from
+TABLE_NAME a JOIN TEMP_TABLE b
+ON
+a.NUMBER = b.NUMBER
