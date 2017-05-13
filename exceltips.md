@@ -2,6 +2,7 @@
 
  #### *VLOOKUP*
  In this case im using it to compare foreign keys from two different sources and get values related to the key in a single sheet.
+ This is the most common usage.
 
 I have two sheets like
 
