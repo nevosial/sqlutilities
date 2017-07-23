@@ -45,6 +45,7 @@ resolved_time = b.resolved_time,
 resolution = b.new_resolution,
 cause_code = b.cause_code,
 resolution_code = b.resolution_code
+assignment_group = b.group
 from
 TABLE_NAME a JOIN TEMP_TABLE b
 ON
