@@ -55,7 +55,7 @@ select ID, Status, NEV_SERVICE_TYPE, NEV_BUSINESS_SERVICE, NEV_IT_SERVICE, NEV_S
 
 ----------------------------------------------
 | Queries used for copying data from a table:|
-----------------------------------------------
+----------------------------------------------7
 
 update TABLE_NAME
 set
