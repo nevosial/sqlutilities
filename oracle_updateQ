@@ -65,4 +65,4 @@ from tempgroup b
 where p1."NUMBER" = b.numb)
 where exists( select 1 from tempgroup b where p1."NUMBER" = b.numb)
 
-//end
+//ended
