@@ -50,6 +50,7 @@ from
 TABLE_NAME a JOIN TEMP_TABLE b
 ON
 a.NUMBER = b.NUMBER
+a.status <> 'closed'
 
 
 4. Following is the query to copy data from one to another table for oracle.
