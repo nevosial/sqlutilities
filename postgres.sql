@@ -13,3 +13,12 @@ BEGIN
 	select project_name, team_lead, income from Projects
     order by internal_id;
 END
+
+
+CREATE PROCEDURE automaticNotifications()
+    SELECT email
+    FROM users
+    WHERE role not in ("admin", "premium")
+
+    ORDER BY email;
+    
